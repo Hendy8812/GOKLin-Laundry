@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoKLin Laundry Purwokerto - Bersih, Rapi, Profesional!</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" href="https://res.cloudinary.com/dnb9edx3e/image/upload/v1752372653/file_000000008a2461f997282432b9dda8fe_yfx3ue.png" type="image/png">
+  <link rel="shortcut icon" href="https://res.cloudinary.com/dnb9edx3e/image/upload/v1752372653/file_000000008a2461f997282432b9dda8fe_yfx3ue.png" type="image/png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.goklinlaundry.com/">
+  <meta property="og:title" content="GoKLin Laundry Purwokerto - Promo GOKIL 30%">
+  <meta property="og:description" content="Laundry Bersih, Wangi, Rapi dengan Antar Jemput GRATIS. Solusi Praktis untuk Anak Kos & Ibu Rumah Tangga di Purwokerto! Dapatkan diskon 30%!">
+  <meta property="og:image" content="https://res.cloudinary.com/dnb9edx3e/image/upload/v1752372653/file_000000008a2461f997282432b9dda8fe_yfx3ue.png">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.goklinlaundry.com/">
+  <meta property="twitter:title" content="GoKLin Laundry Purwokerto - Promo GOKIL 30%">
+  <meta property="twitter:description" content="Laundry Bersih, Wangi, Rapi dengan Antar Jemput GRATIS. Solusi Praktis untuk Anak Kos & Ibu Rumah Tangga di Purwokerto! Dapatkan diskon 30%!">
+  <meta property="twitter:image" content="https://res.cloudinary.com/dnb9edx3e/image/upload/v1752372653/file_000000008a2461f997282432b9dda8fe_yfx3ue.png">
+
+  <style>
+    /* Global Styles - Biru Tosca Cerah Tema */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #F0F8FF; /* Background putih kebiruan sangat terang */
+      color: #333333; /* Warna teks default abu-abu gelap */
+      cursor: default;
+      overflow-x: hidden; /* Mencegah overflow horizontal dari gelembung */
+    }
+
+    h1, h2, h3, .font-montserrat {
+      font-family: 'Montserrat', sans-serif;
+      color: #005F6B; /* Judul biru tosca gelap */
+    }
+
+    /* Hide scrollbar while allowing content to be there */
+    html {
+      scroll-behavior: smooth;
+    }
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* --- Bubble Effect CSS --- */
+    .bubble-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Agar tidak menghalangi klik pada konten lain */
+      overflow: hidden;
+      z-index: 0; /* Pastikan gelembung di belakang konten utama */
+    }
+
+    .bubble {
+      position: absolute;
+      background: rgba(0, 191, 178, 0.1); /* Gelembung tosca transparan */
+      border-radius: 50%;
+      animation: floatUp ease-in infinite;
+      box-shadow: 0 0 10px rgba(0, 191, 178, 0.1), inset 0 0 8px rgba(0, 191, 178, 0.3); /* Efek kilap gelembung */
+      opacity: 0; /* Awalnya tidak terlihat */
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) translateX(var(--x-start, 0));
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8; /* Muncul sepenuhnya */
+      }
+      80% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(-10vh) translateX(var(--x-end, 0));
+        opacity: 0;
+      }
+    }
+
+    /* Floating WhatsApp Button */
+    .floating-whatsapp {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366; /* WhatsApp Green */
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+      z-index: 999;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse-whatsapp 2s infinite;
+    }
+
+    .floating-whatsapp:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    @keyframes pulse-whatsapp {
+      0% { transform: scale(1); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); }
+      50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35); }
+      100% { transform: scale(1); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); }
+    }
+
+    /* Popup Styles */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* Overlay sedikit lebih terang */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .popup-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-content {
+      background: #FFFFFF; /* Latar belakang popup putih bersih */
+      color: #333333; /* Teks popup abu-abu gelap */
+      padding: 40px 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Shadow lebih ringan */
+      max-width: 400px;
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      position: relative;
+      border: 1px solid #E0E0E0; /* Border abu-abu terang */
+    }
+
+    .popup-overlay.show .popup-content {
+      transform: scale(1);
+    }
+
+    .popup-content h3 {
+      font-size: 28px;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #005F6B; /* Judul popup biru tosca gelap */
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .popup-content p {
+      font-size: 17px;
+      margin-bottom: 25px;
+      line-height: 1.6;
+      color: #555555; /* Paragraf popup abu-abu sedang */
+    }
+
+    .popup-content .popup-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #00BFB2; /* Biru tosca primer untuk CTA */
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 17px;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      animation: pulse-button 2s infinite;
+    }
+
+    .popup-content .popup-button:hover {
+      background: #00A696;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes pulse-button {
+      0% { transform: scale(1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+      50% { transform: scale(1.03); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); }
+      100% { transform: scale(1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: #AAAAAA; /* Tombol close popup abu-abu terang */
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s ease;
+    }
+
+    .popup-close:hover {
+      color: #555555; /* Warna hover tombol close */
+    }
+
+    /* Responsive adjustments for popup */
+    @media (max-width: 768px) {
+      .popup-content {
+        padding: 30px 20px;
+        max-width: 95%;
+      }
+      .popup-content h3 {
+        font-size: 24px;
+      }
+      .popup-content p {
+        font-size: 16px;
+      }
+      .popup-content .popup-button {
+        font-size: 16px;
+        padding: 12px 25px;
+      }
+    }
+
+    /* --- HEADER STYLES --- */
+    .header-bg {
+      /* Gradien tema biru tosca cerah */
+      background: linear-gradient(135deg, #E0F8FF 0%, #A7E4EC 100%); /* Biru sangat terang ke tosca muda */
+      position: relative;
+      z-index: 1;
+      min-height: 60vh;
+      padding: 60px 0 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    @media (max-width: 768px) {
+        .header-bg {
+            min-height: 70vh;
+            padding-bottom: 80px;
+        }
+    }
+
+    .header-text-shadow {
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Shadow teks lebih ringan untuk background terang */
+      color: #005F6B; /* Warna teks header biru tosca gelap */
+    }
+    .header-bg p {
+        color: #333333; /* Warna paragraf header abu-abu gelap */
+    }
+
+    .promo-badge {
+      background-color: #FFEA00; /* Yellow accent color */
+      color: #333;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow lebih ringan */
+      animation: pulse-badge 1.5s infinite alternate;
+    }
+
+    @keyframes pulse-badge {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    /* HEADER ANIMATIONS */
+    @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    @keyframes slideInUp {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .header-content-animate {
+        opacity: 0;
+    }
+    .header-content-animate.h-animate-1 { animation: slideInUp 0.8s ease-out forwards; }
+    .header-content-animate.h-animate-2 { animation: slideInUp 0.8s ease-out forwards 0.3s; }
+    .header-content-animate.h-animate-3 { animation: fadeIn 0.8s ease-out forwards 0.6s; }
+
+    /* Animasi pulse tambahan untuk tombol utama */
+    .primary-button.pulsing-header-btn {
+        animation: pulse-button-header 2s infinite;
+    }
+    @keyframes pulse-button-header {
+      0% { transform: scale(1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+      50% { transform: scale(1.03); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); }
+      100% { transform: scale(1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); }
+    }
+
+    /* Wave SVG Style */
+    .wave-svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+      z-index: 1;
+    }
+    .wave-svg svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 150px;
+      background-color: transparent;
+    }
+    .wave-svg .shape-fill {
+      fill: #F0F8FF; /* Warna gelombang sesuai background body baru */
+    }
+
+    /* Button Styles (Diperbarui untuk tema terang) */
+    .primary-button {
+      background: #00BFB2; /* Biru tosca primer */
+      color: white; /* Teks putih */
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .primary-button:hover {
+      background: #00A696;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .secondary-button {
+      color: #007BB6; /* Biru sedang untuk secondary */
+      background-color: transparent;
+      border: 2px solid #007BB6;
+      padding: 12px 26px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .secondary-button:hover {
+      background-color: #007BB6;
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Section Titles */
+    .section-title {
+      color: #005F6B; /* JUDUL SECTION BIRU TOSCA GELAP */
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    /* --- Section "Masalah Klasik Laundry" & "Solusi Cerdas dari GoKLin" --- */
+    /* Membuat section ini transparan kembali */
+    section.bg-light-card {
+        /* background-color: #FFFFFF;  DIHAPUS UNTUK TRANSPARAN */
+        /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); DIHAPUS UNTUK TRANSPARAN */
+        position: relative;
+        z-index: 1;
+        border-radius: 16px;
+        padding: 4rem 1.5rem;
+        margin-bottom: 4rem;
+    }
+    .text-aqua-accent { /* Untuk "GoKLin Solusi Pintar Anda!" */
+      color: #00BFB2; /* BIRU TOSCA TERANG */
+    }
+
+    /* Warna untuk Masalah Klasik Laundry */
+    .bg-problem-card {
+      background-color: #FFFFFF; /* Ganti ke putih bersih untuk kartu di dalam section transparan */
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    .text-problem-title {
+      color: #E74C3C; /* MERAH CERAH UNTUK MASALAH */
+    }
+    .text-problem-icon {
+      color: #C0392B; /* MERAH GELAP UNTUK IKON MASALAH */
+    }
+    .text-card-content { /* Untuk daftar masalah & solusi */
+        color: #555555; /* TEKS UMUM ABU-ABU SEDANG */
+    }
+
+    /* Warna untuk Solusi Cerdas dari GoKLin */
+    .bg-solution-card {
+      background-color: #FFFFFF; /* Ganti ke putih bersih untuk kartu di dalam section transparan */
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    .text-solution-title {
+      color: #005F6B; /* BIRU TOSCA GELAP */
+    }
+    .text-solution-icon { /* IKON SOLUSI */
+        color: #00BFB2; /* BIRU TOSCA TERANG */
+    }
+    .text-emphasis-strong { /* Untuk "GoKLin Laundry hadir untuk menjawab..." (strong) */
+        color: #333333; /* SANGAT GELAP */
+    }
+    .text-accent-green { /* Untuk "GRATIS" */
+        color: #2ECC71; /* HIJAU TERANG */
+    }
+    .text-accent-cyan { /* Untuk "BERSIH, WANGI" */
+        color: #00BFB2; /* BIRU TOSCA TERANG */
+    }
+    .text-accent-orange { /* Untuk "CEPAT!" */
+        color: #F39C12; /* ORANGE CERAH */
+    }
+    .text-light-gray-para { /* Untuk "Serahkan urusan laundry Anda..." */
+        color: #777777; /* TEKS ABU-ABU SEDANG */
+    }
+
+    /* --- Section "Keunggulan" & "Harga" (KONSISTENSI LEBAR CARD) --- */
+    /* Untuk grid dengan 3 kolom (lg) atau 2 kolom (md) */
+    #advantages .grid > div,
+    #harga .grid > div,
+    #testimonials .grid > div {
+        background-color: #FFFFFF; /* Latar belakang kartu keunggulan putih bersih */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+        border-radius: 16px; /* Lebih bulat */
+        display: flex; /* Flexbox untuk memastikan konten mengisi tinggi */
+        flex-direction: column; /* Konten diatur secara kolom */
+        justify-content: space-between; /* Menjaga footer tombol/gambar di bawah */
+    }
+    #advantages .grid > div:hover,
+    #harga .grid > div:hover,
+    #testimonials .grid > div:hover {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-7px);
+    }
+
+    /* Warna Latar Belakang Ikon pada Keunggulan */
+    .bg-icon-blue-light {
+        background-color: rgba(0, 191, 178, 0.1); /* Biru tosca terang transparan */
+    }
+    .bg-icon-green-light {
+        background-color: rgba(46, 204, 113, 0.1); /* Hijau terang transparan */
+    }
+    .bg-icon-cyan-light {
+        background-color: rgba(0, 191, 178, 0.1); /* Cyan transparan */
+    }
+    .bg-icon-yellow-light {
+        background-color: rgba(243, 156, 18, 0.1); /* Kuning/Orange transparan */
+    }
+
+    /* Warna Border Bawah Kartu Keunggulan */
+    .border-blue-accent {
+        border-color: #00BFB2; /* Biru tosca terang */
+    }
+    .border-green-accent {
+        border-color: #2ECC71; /* Hijau terang */
+    }
+    .border-cyan-accent {
+        border-color: #00BFB2; /* Biru tosca terang */
+    }
+    .border-yellow-accent {
+        border-color: #F39C12; /* Orange cerah */
+    }
+
+    /* Warna Ikon pada Keunggulan */
+    .text-icon-blue { color: #00BFB2; }
+    .text-icon-green { color: #2ECC71; }
+    .text-icon-cyan { color: #00BFB2; }
+    .text-icon-yellow { color: #F39C12; }
+
+    /* Warna Judul Kartu Keunggulan */
+    .text-card-title {
+        color: #005F6B; /* Biru tosca gelap */
+    }
+
+    /* Warna Teks Paragraf Kartu Keunggulan */
+    .text-card-desc {
+        color: #555555; /* Abu-abu sedang */
+    }
+    .text-card-strong {
+        color: #00BFB2; /* Biru tosca terang untuk strong */
+    }
+    .text-card-strong-yellow {
+        color: #F39C12; /* Orange cerah untuk strong loyalitas emas */
+    }
+
+
+    /* Pricing Section */
+    #harga .grid > div {
+      border-top-width: 4px; /* Menjaga ketebalan border konsisten */
+    }
+
+    #harga .grid > div:nth-child(1) {
+      border-top-color: #00BFB2; /* Biru tosca terang untuk reguler */
+    }
+    #harga .grid > div:nth-child(2) {
+      border-top-color: #F39C12; /* Orange cerah untuk kilat */
+    }
+    #harga .grid > div:nth-child(3) {
+      border-top-color: #2ECC71; /* Hijau terang untuk setrika saja */
+    }
+
+    #harga i {
+      color: #00BFB2; /* ICON HARGA BIRU TOSCA TERANG */
+    }
+
+    #harga .grid > div:nth-child(2) i {
+      color: #F39C12; /* Orange cerah untuk ikon kilat */
+    }
+
+    #harga .grid > div:nth-child(3) i {
+      color: #2ECC71; /* Hijau terang untuk ikon setrika saja */
+    }
+
+    #harga h3 {
+      color: #005F6B; /* JUDUL KARTU HARGA BIRU TOSCA GELAP */
+    }
+
+    #harga .text-4xl {
+      color: #00BFB2; /* HARGA UTAMA BIRU TOSCA TERANG */
+    }
+
+    #harga .text-price-desc {
+      color: #555555; /* TEKS KARTU HARGA ABU-ABU SEDANG */
+    }
+
+    #harga .grid > div:nth-child(2) .primary-button {
+      background-color: #F39C12; /* TOMBOL KILAT ORANGE CERAH */
+      color: white;
+    }
+
+    #harga .grid > div:nth-child(2) .primary-button:hover {
+      background-color: #E67E22;
+    }
+
+    #harga .grid > div:nth-child(3) .primary-button {
+      background-color: #2ECC71; /* TOMBOL SETRIKA SAJA HIJAU TERANG */
+      color: white;
+    }
+
+    #harga .grid > div:nth-child(3) .primary-button:hover {
+      background-color: #27AE60;
+    }
+
+    /* FAQ Section */
+    #faq .max-w-3xl > div {
+      background-color: #FFFFFF; /* LATAR BELAKANG FAQ PUTIH BERSIH */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+    }
+
+    #faq .faq-question {
+      background-color: #F8F8F8; /* LATAR BELAKANG TOMBOL FAQ ABU-ABU SANGAT TERANG */
+      color: #005F6B; /* TEKS TOMBOL FAQ BIRU TOSCA GELAP */
+      padding: 1rem 0;
+    }
+
+    #faq .faq-question:hover {
+      background-color: #EEEEEE; /* HOVER TOMBOL FAQ SEDIKIT LEBIH GELAP */
+    }
+
+    #faq .faq-answer {
+      color: #555555; /* TEKS JAWABAN FAQ ABU-ABU SEDANG */
+      padding-bottom: 1rem;
+    }
+
+    /* Testimonials Section */
+    #testimonials .grid > div {
+      /* Menggunakan properti card umum di atas */
+    }
+
+    #testimonials p.text-testimonial-italic {
+      color: #555555; /* TEKS TESTIMONI ABU-ABU SEDANG */
+    }
+
+    #testimonials img {
+      border: 2px solid #00BFB2; /* BORDER FOTO TESTIMONI BIRU TOSCA */
+    }
+
+    #testimonials .font-semibold-name {
+      color: #005F6B; /* NAMA TESTIMONI BIRU TOSCA GELAP */
+    }
+
+    #testimonials .text-sm-role {
+      color: #777777; /* JABATAN TESTIMONI ABU-ABU SEDANG */
+    }
+
+    /* Contact Section */
+    #contact .max-w-xl {
+      background-color: #FFFFFF; /* LATAR BELAKANG KARTU KONTAK PUTIH BERSIH */
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1;
+      border-radius: 16px;
+      padding: 3rem;
+    }
+
+    #contact p.text-xl-contact {
+      color: #005F6B; /* TEKS KONTAK BIRU TOSCA GELAP */
+    }
+
+    #contact p.text-contact-address {
+      color: #555555; /* TEKS ALAMAT ABU-ABU SEDANG */
+    }
+
+    #contact iframe {
+      border: 1px solid #DDDDDD; /* BORDER PETA ABU-ABU TERANG */
+      border-radius: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #E0F8FF; /* BACKGROUND FOOTER PUTIH KEBIRUAN SANGAT TERANG */
+      color: #555555; /* Teks footer abu-abu sedang */
+      padding: 2.5rem 0;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer .social-links a {
+      color: #007BB6; /* Warna ikon sosial media biru sedang */
+      margin: 0 0.75rem;
+      font-size: 1.8rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-links a:hover {
+      color: #00BFB2; /* HOVER SOSIAL MEDIA BIRU TOSCA TERANG */
+    }
+
+    footer p.text-sm-copyright {
+      color: #777777; /* TEKS COPYRIGHT ABU-ABU SEDANG */
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body class="font-sans">
+
+  <div class="bubble-container"></div>
+
+  <section class="relative header-bg text-white overflow-hidden p-4">
+    <div class="relative z-20 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="absolute top-0 right-0 -mt-6 -mr-6 sm:mt-0 sm:mr-0 transform rotate-12">
+        <div class="promo-badge">
+          Diskon 30% Pelanggan Baru!
+        </div>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 font-montserrat header-text-shadow header-content-animate h-animate-1">
+        GoKLin Laundry Purwokerto
+      </h1>
+      <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl leading-relaxed text-opacity-80 header-text-shadow header-content-animate h-animate-2">
+        Laundry Bersih, Wangi, Rapi dengan Antar Jemput <span class="font-bold text-yellow-500">GRATIS</span>. Solusi Praktis untuk Anak Kos & Ibu Rumah Tangga di Purwokerto!
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 header-content-animate h-animate-3">
+        <a href="https://wa.me/6285716561112" target="_blank" class="w-full sm:w-auto primary-button pulsing-header-btn">
+          <i class="fab fa-whatsapp mr-2"></i> Ambil Diskon 30% Sekarang!
+        </a>
+        <a href="#harga" class="w-full sm:w-auto secondary-button">
+          Lihat Paket Hemat Kami
+        </a>
+      </div>
+    </div>
+
+    <div class="wave-svg">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,174.38-41.21,34.34-7.47,70.65-10.89,112.95-10.89,48.69,0,109.53,24.57,138.51,42.66,35.64,21.07,69.77,24.43,133.87,24.43s164.07-29.06,201.16-56.55c34.79-25.54,71.43-47.56,116.89-60.84V0H0V57.85C113.23,60.56,189.33,49.76,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+  </section>
+
+  <main class="container mx-auto p-4 py-16">
+    <section class="bg-light-card py-16 md:py-24 mb-16 overflow-hidden">
+        <div class="container mx-auto text-center">
+            <h2 class="section-title">
+                Capek Laundry? <span class="text-aqua-accent">GoKLin Solusi Pintar Anda!</span>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+                <div class="bg-problem-card p-8 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-problem-title mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 mr-3 text-problem-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Masalah Klasik Laundry
+                        </h3>
+                        <ul class="text-lg md:text-xl text-card-content space-y-4 text-left">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-problem-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <span class="font-medium">Sibuk dan tak punya waktu untuk mencuci.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-problem-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2A9 9 0 111 12a9 9 0 0118 0z"></path></svg>
+                                <span class="font-medium">Cari laundry antar-jemput yang terpercaya.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-problem-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2A9 9 0 111 12a9 9 0 0118 0z"></path></svg>
+                                <span class="font-medium">Ingin laundry bersih, wangi, dan harga bersahabat.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-problem-icon flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 0012 9V0m0 18a9 9 0 00-5.364-16.364M12 12V0m0 18H0"></path></svg>
+                                <span class="font-medium">Tumpukan laundry bikin stres.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-solution-card p-8 rounded-3xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2 h-full flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-solution-title mb-6 flex items-center justify-center">
+                            <svg class="w-8 h-8 mr-3 text-solution-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Solusi Cerdas dari GoKLin!
+                        </h3>
+                        <p class="text-xl md:text-2xl text-emphasis-strong mb-6 text-left leading-relaxed">
+                            <strong class="text-solution-title">GoKLin Laundry hadir untuk menjawab semua kebutuhan Anda!</strong> Kami siap jemput dan antar cucian Anda, <span class="font-bold text-accent-green">GRATIS</span>, tanpa minimal order, dan dijamin <span class="font-bold text-accent-cyan">BERSIH, WANGI,</span> serta <span class="font-bold text-accent-orange">CEPAT!</span>
+                        </p>
+                        <p class="text-lg text-light-gray-para text-left">
+                            Serahkan urusan laundry Anda pada kami dan nikmati waktu luang Anda. Hidup lebih mudah dengan GoKLin!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="bg-light-card py-16 md:py-24 mb-16">
+        <div class="container mx-auto text-center">
+            <h2 class="section-title font-montserrat">
+                Ini Dia <span class="text-aqua-accent">Keunggulan GoKLin</span> yang Bikin Hidup Lebih Mudah:
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div
+                    class="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-blue-accent">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-icon-blue-light p-3 rounded-full mr-4 text-icon-blue flex-shrink-0">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-title font-montserrat">Gratis Antar Jemput</h3>
+                    </div>
+                    <p class="text-card-desc text-lg">
+                        Nikmati layanan antar jemput cucian Anda <strong class="text-card-strong">tanpa biaya tambahan
+                            dan tanpa minimal order!</strong> Kemudahan maksimal untuk Anda.
+                    </p>
+                </div>
+
+
+                <div
+                    class="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-green-accent">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-icon-green-light p-3 rounded-full mr-4 text-icon-green flex-shrink-0">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 10H4a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2V12a2 2 0 00-2-2z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 21v-3a2 2 0 012-2h6a2 2 0 012 2v3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-title font-montserrat">Harga Super Hemat</h3>
+                    </div>
+                    <p class="text-card-desc text-lg">
+                        Cuci mulai <strong class="text-card-strong">hanya Rp5.000/kg!</strong> Kualitas premium dengan harga
+                        yang paling bersahabat di kantong.
+                    </p>
+                </div>
+
+
+                <div
+                    class="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-cyan-accent">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-icon-cyan-light p-3 rounded-full mr-4 text-icon-cyan flex-shrink-0">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-title font-montserrat">Proses Cuci 3 Kali</h3>
+                    </div>
+                    <p class="text-card-desc text-lg">
+                        Kami menjamin <strong class="text-card-strong">bersih, wangi, dan rapi sempurna</strong> dengan
+                        proses pencucian hingga 3 tahap yang teliti.
+                    </p>
+                </div>
+
+
+                <div
+                    class="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-yellow-accent">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-icon-yellow-light p-3 rounded-full mr-4 text-icon-yellow flex-shrink-0">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11.042 20.42L12 18.75l1.042 1.67a1 1 0 00.958.58h.5c.55 0 1.05.27 1.34.7l1.79 2.87c.29.47-.07.97-.6.97H5.21c-.53 0-.89-.5-.6-.97L6.67 21a1 1 0 001.34-.7h.5c.55 0 1.05.27 1.34.7l1.79 2.87c.29.47-.07.97-.6.97H5.21z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 11c0-2.21-1.79-4-4-4S4 8.79 4 11s1.79 4 4 4 4-1.79 4-4z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-title font-montserrat">Promo Loyalitas Emas</h3>
+                    </div>
+                    <p class="text-card-desc text-lg">
+                        Cuci 10x di GoKLin dan dapatkan hadiah langsung <strong class="text-card-strong-yellow">Emas 24K!</strong>
+                        Loyalitas Anda adalah prioritas kami.
+                    </p>
+                </div>
+
+
+                <div
+                    class="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-green-accent">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-icon-green-light p-3 rounded-full mr-4 text-icon-green flex-shrink-0">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.007 12.007 0 002 12c0 3.072 1.146 5.918 3.06 8.016L12 22l6.94-1.984C20.854 17.918 22 15.072 22 12c0-3.072-1.146-5.918-3.06-8.016z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-title font-montserrat">Aman untuk Pakaian Ibadah</h3>
+                    </div>
+                    <p class="text-card-desc text-lg">
+                        Kami memperlakukan setiap cucian dengan hati-hati, <strong class="text-card-strong">khususnya
+                            pakaian ibadah Anda</strong>, menjaga kebersihan dan kesuciannya.
+                    </p>
+                </div>
+
+
+                <div
+                    class="p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-b-4 border-blue-accent">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-icon-blue-light p-3 rounded-full mr-4 text-icon-blue flex-shrink-0">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-card-title font-montserrat">Cepat, Hemat, Terpercaya</h3>
+                    </div>
+                    <p class="text-card-desc text-lg">
+                        Layanan kami dirancang untuk <strong class="text-card-strong">efisiensi waktu dan biaya</strong>,
+                        didukung tim profesional yang terpercaya.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="harga" class="my-16 text-center">
+      <h2 class="section-title font-montserrat">Pilihan Paket Hemat Kami</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 rounded-lg shadow-lg border-t-4 border-blue-500 flex flex-col items-center card-hover-wobble">
+          <i class="fas fa-tshirt text-5xl text-blue-500 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 font-montserrat">Reguler (Cuci + Setrika)</h3>
+          <p class="text-price-desc text-lg mb-4">Estimasi 2-3 Hari</p>
+          <div class="text-4xl font-extrabold text-green-600 mb-6">Rp5.000<span class="text-2xl font-semibold">/kg</span></div>
+          <ul class="text-left text-price-desc list-disc list-inside mb-6 space-y-2 min-h-[160px]">
+            <li>Cuci bersih & wangi</li>
+            <li>Setrika rapih</li>
+            <li>Lipat & packing profesional</li>
+            <li>Cocok untuk kebutuhan harian</li>
+          </ul>
+          <a href="https://wa.me/6285716561112" target="_blank" class="mt-auto primary-button">Pesan Sekarang</a>
+        </div>
+
+        <div class="p-6 rounded-lg shadow-lg border-t-4 border-yellow-500 flex flex-col items-center card-hover-wobble">
+          <i class="fas fa-bolt text-5xl text-yellow-500 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 font-montserrat">Kilat (Cuci + Setrika)</h3>
+          <p class="text-price-desc text-lg mb-4">Estimasi 1 Hari</p>
+          <div class="text-4xl font-extrabold text-green-600 mb-6">Rp10.000<span class="text-2xl font-semibold">/kg</span></div>
+          <ul class="text-left text-price-desc list-disc list-inside mb-6 space-y-2 min-h-[160px]">
+            <li>Proses super cepat</li>
+            <li>Prioritas pengerjaan</li>
+            <li>Tetap bersih & rapi</li>
+            <li> </li> </ul>
+          <a href="https://wa.me/6285716561112" target="_blank" class="mt-auto primary-button bg-yellow-500 text-gray-900 hover:bg-yellow-600">Pesan Sekarang</a>
+        </div>
+
+        <div class="p-6 rounded-lg shadow-lg border-t-4 border-green-500 flex flex-col items-center card-hover-wobble">
+          <i class="fas fa-iron text-5xl text-green-500 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 font-montserrat">Setrika Saja</h3>
+          <p class="text-price-desc text-lg mb-4">Estimasi 1 Hari</p>
+          <div class="text-4xl font-extrabold text-green-600 mb-6">Rp4.000<span class="text-2xl font-semibold">/kg</span></div>
+          <ul class="text-left text-price-desc list-disc list-inside mb-6 space-y-2 min-h-[160px]">
+            <li>Setrika super rapih</li>
+            <li>Khusus untuk pakaian bersih</li>
+            <li>Hemat waktu & tenaga</li>
+            <li>Siap langsung pakai</li>
+          </ul>
+          <a href="https://wa.me/6285716561112" target="_blank" class="mt-auto primary-button bg-green-500 hover:bg-green-600">Pesan Sekarang</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="my-16 text-center">
+        <h2 class="section-title font-montserrat">❓ FAQ – Pertanyaan Umum</h2>
+        <div class="max-w-3xl mx-auto text-left">
+            <div class="rounded-lg shadow-lg">
+                <div class="border-b border-gray-200 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0">
+                    <button class="flex justify-between items-center w-full focus:outline-none text-xl font-semibold faq-question">
+                        <span>1. Apakah ada minimal berat cucian untuk antar jemput gratis?</span>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                        <p class="pt-4 text-faq-answer">Tidak ada minimal! Mau 1 kg pun tetap kami jemput dan antar gratis.</p>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0">
+                    <button class="flex justify-between items-center w-full focus:outline-none text-xl font-semibold faq-question">
+                        <span>2. Berapa lama proses laundry reguler?</span>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                        <p class="pt-4 text-faq-answer">Untuk layanan reguler, estimasi pengerjaan 2-3 hari. Jika ingin lebih cepat, kami punya layanan kilat 1 hari!</p>
+                    </div>
+                </div>
+
+                <div class="border-b border-gray-200 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0">
+                    <button class="flex justify-between items-center w-full focus:outline-none text-xl font-semibold faq-question">
+                        <span>3. Bagaimana cara klaim Loyalty Card Emas?</span>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                        <p class="pt-4 text-faq-answer">Setiap 10 kali transaksi, Anda berhak mendapatkan 0.001g emas 24K. Kami akan informasikan saat Anda sudah mencapai kuota.</p>
+                    </div>
+                </div>
+
+                 <div class="border-b border-gray-200 pb-4 mb-4 last:border-b-0 last:pb-0 last:mb-0">
+                    <button class="flex justify-between items-center w-full focus:outline-none text-xl font-semibold faq-question">
+                        <span>4. Apakah GoKLin aman untuk pakaian ibadah?</span>
+                        <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer overflow-hidden transition-all duration-300 ease-in-out max-h-0">
+                        <p class="pt-4 text-faq-answer">Sangat aman! Kami memastikan proses pencucian menggunakan air bersih dan detergen halal, serta tidak tercampur dengan pakaian yang berpotensi najis, sehingga aman untuk pakaian ibadah Anda.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="my-16 text-center">
+        <h2 class="section-title font-montserrat">Apa Kata Pelanggan Kami?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-6 rounded-lg shadow-lg flex flex-col card-hover-wobble">
+                <p class="text-testimonial-italic italic mb-4">"GoKLin Laundry benar-benar penyelamat! Pakaian selalu bersih sempurna dan wangi. Layanan jemput antar gratisnya itu lho, sangat membantu. Super praktis!"</p>
+                <div class="flex items-center mt-auto">
+                    <img src="https://placehold.co/48x48/00BFB2/FFFFFF/png?text=F" alt="Foto profil Fitriani" class="w-12 h-12 rounded-full mr-4 border-2 border-blue-500" loading="lazy">
+                    <div>
+                        <p class="font-semibold-name">Fitriani</p>
+                        <p class="text-sm-role">Dosen Universitas</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 rounded-lg shadow-lg flex flex-col card-hover-wobble">
+                <p class="text-testimonial-italic italic mb-4">"Kualitas cucian jempolan, noda bandel hilang dan serat kain tetap terjaga. Stafnya ramah dan responsif. Harga juga bersaing banget. Rekomended!"</p>
+                <div class="flex items-center mt-auto">
+                    <img src="https://placehold.co/48x48/F39C12/FFFFFF/png?text=B" alt="Foto profil Bayu Pradana" class="w-12 h-12 rounded-full mr-4 border-2 border-yellow-500" loading="lazy">
+                    <div>
+                        <p class="font-semibold-name">Bayu Pradana</p>
+                        <p class="text-sm-role">Pengusaha Muda</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 rounded-lg shadow-lg flex flex-col card-hover-wobble">
+                <p class="text-testimonial-italic italic mb-4">"Sebagai mahasiswa rantau, laundry itu PR banget. Untungnya ada GoKLin! Mereka super responsif, pakaian dijemput dan diantar tepat waktu. Wangiii pol!"</p>
+                <div class="flex items-center mt-auto">
+                    <img src="https://placehold.co/48x48/2ECC71/FFFFFF/png?text=R" alt="Foto profil Rina Amelia" class="w-12 h-12 rounded-full mr-4 border-2 border-green-500" loading="lazy">
+                    <div>
+                        <p class="font-semibold-name">Rina Amelia</p>
+                        <p class="text-sm-role">Mahasiswi Unsoed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="my-16 text-center">
+        <h2 class="section-title font-montserrat">Hubungi Kami</h2>
+        <p class="text-light-gray-para text-lg mb-8">Siap membantu Anda dengan layanan laundry terbaik!</p>
+        <div class="max-w-xl mx-auto p-8 rounded-lg shadow-lg">
+            <p class="text-xl-contact font-semibold mb-4">GoKLin Laundry Purwokerto</p>
+            <p class="text-contact-address mb-2">Jl. Gatramas Raya No.2 Blok O, Tegalmulya, Ledug, Kembaran,</p>
+            <p class="text-contact-address mb-4">Kabupaten Banyumas, Jawa Tengah 53182</p>
+            <a href="https://wa.me/6285716561112" target="_blank" class="inline-flex items-center primary-button">
+                <i class="fab fa-whatsapp mr-2"></i> Hubungi via WhatsApp
+            </a>
+            <div class="mt-8">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7912.950029201219!2d109.2750151!3d-7.4125616!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e655f0063c4d10b%3A0x98c9b375e95d4369!2sGOKLin%20LAUNDRY!5e0!3m2!1sen!2sus!4v1752347867284!5m2!1sen!2sus"
+                    width="100%"
+                    height="350"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <a href="https://wa.me/6285716561112" class="floating-whatsapp" target="_blank" aria-label="Chat via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <div class="popup-overlay" id="discountPopup">
+    <div class="popup-content">
+      <button class="popup-close" id="closePopup">×</button>
+      <h3>YAKIN Mau Melewatkan Diskon GOKIL Ini?</h3>
+      <p>Dapatkan **30% POTONGAN HARGA** spesial untuk pelanggan baru! Jangan sampai kelewatan kesempatan emas ini.</p>
+      <a href="https://wa.me/6285716561112" target="_blank" class="popup-button">WA SEKARANG!</a>
+    </div>
+  </div>
+
+  <footer class="text-white py-8 text-center">
+    <div class="container mx-auto">
+      <div class="social-links mb-4">
+        <a href="https://www.facebook.com/goklinlaundry" target="_blank" aria-label="Facebook" class="text-white hover:text-blue-500 mx-3 text-2xl transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/goklinlaundry" target="_blank" aria-label="Instagram" class="text-white hover:text-pink-500 mx-3 text-2xl transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@goklinlaundry" target="_blank" aria-label="TikTok" class="text-white hover:text-gray-400 mx-3 text-2xl transition-colors duration-300"><i class="fab fa-tiktok"></i></a>
+      </div>
+      <p class="text-sm-copyright">© 2025 GoKLin Laundry. All rights reserved. | Powered by Kang Hendy</p>
+    </div>
+  </footer>
+
+  <script>
+    // --- Popup Logic (Diperbarui untuk Exit Intent) ---
+    const discountPopup = document.getElementById('discountPopup');
+    const closePopupButton = document.getElementById('closePopup');
+    let hasPopupShown = false;
+
+    // Function to show the popup
+    function showPopup() {
+        if (!hasPopupShown) {
+            discountPopup.classList.add('show');
+            hasPopupShown = true;
+            // Optionally, remove the event listener after showing the popup
+            document.removeEventListener('mouseleave', handleExitIntent);
+        }
+    }
+
+    // Handle Exit Intent - when mouse leaves the top of the viewport
+    function handleExitIntent(e) {
+        if (e.clientY < 10) { // If mouse Y coordinate is near the top (e.g., within 10px)
+            showPopup();
+        }
+    }
+
+    // Add event listener for exit intent
+    document.addEventListener('mouseleave', handleExitIntent);
+
+    // Close button functionality
+    closePopupButton.addEventListener('click', () => {
+      discountPopup.classList.remove('show');
+    });
+
+    // --- FAQ Accordion Logic (tetap sama) ---
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.closest('div'); // Get the parent div of the button
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('i');
+
+            // Close other open FAQ items
+            document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                if (otherAnswer !== answer && otherAnswer.style.maxHeight) {
+                    otherAnswer.style.maxHeight = null;
+                    otherAnswer.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                }
+            });
+
+            // Toggle current FAQ item
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.classList.remove('rotate-180');
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                icon.classList.add('rotate-180');
+            }
+        });
+    });
+
+    // --- Bubble Effect JavaScript (tetap sama) ---
+    const bubbleContainer = document.querySelector('.bubble-container');
+    const numBubbles = 30; // Jumlah gelembung yang ingin ditampilkan
+
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+
+        const size = Math.random() * 20 + 10; // Ukuran 10px - 30px
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+
+        const startX = Math.random() * 100; // Posisi X awal (0% - 100%)
+        bubble.style.left = `${startX}vw`;
+        bubble.style.setProperty('--x-start', `${Math.random() * 40 - 20}px`); // Sedikit geser X awal
+        bubble.style.setProperty('--x-end', `${Math.random() * 40 - 20}px`); // Sedikit geser X akhir
+
+        const duration = Math.random() * 10 + 10; // Durasi animasi 10s - 20s
+        bubble.style.animationDuration = `${duration}s`;
+
+        const delay = Math.random() * 10; // Delay sebelum muncul 0s - 10s
+        bubble.style.animationDelay = `${delay}s`;
+
+        bubbleContainer.appendChild(bubble);
+
+        // Hapus gelembung setelah animasinya selesai
+        bubble.addEventListener('animationend', () => {
+            bubble.remove();
+            createBubble(); // Buat gelembung baru setelah satu gelembung selesai
+        });
+    }
+
+    // Buat gelembung awal
+    for (let i = 0; i < numBubbles; i++) {
+        createBubble();
+    }
+  </script>
+</body>
+</html>
